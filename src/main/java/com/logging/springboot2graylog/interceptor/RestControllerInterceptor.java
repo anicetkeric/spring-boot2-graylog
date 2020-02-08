@@ -69,6 +69,7 @@ public class RestControllerInterceptor extends HandlerInterceptorAdapter {
         req.put("request-id", counter);
         req.put("uri", request.getRequestURI());
         req.put("method", request.getMethod());
+        req.put("remote-address", request.getRemoteAddr());
         req.set("headers", mapToJsonNode(getRequestHeadersInfo(request)));
 
         logger.debug(prettyJson ? jsonToPrettyString(req): req.toString());

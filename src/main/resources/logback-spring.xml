@@ -22,20 +22,6 @@
         </encoder>
     </appender>
 
-    <appender name="REST_CLIENTS_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <!-- daily rollover -->
-            <fileNamePattern>logs/rest-clients-debug.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <maxFileSize>100MB</maxFileSize>
-            <!-- keep 30 days' worth of history capped at 3GB total size -->
-            <maxHistory>30</maxHistory>
-            <totalSizeCap>3GB</totalSizeCap>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%date %level [%-4relative] [%thread] %logger{10} [%file:%line] %msg%n</pattern>
-        </encoder>
-    </appender>
-
     <appender name="INCOMING_REQUESTS_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- daily rollover -->
@@ -54,13 +40,43 @@
     <appender name="GELF" class="de.siegmar.logbackgelf.GelfUdpAppender">
         <graylogHost>127.0.0.1</graylogHost>
         <graylogPort>12201</graylogPort>
+        <maxChunkSize>508</maxChunkSize>
+        <useCompression>true</useCompression>
+        <encoder class="de.siegmar.logbackgelf.GelfEncoder">
+            <originHost>127.0.0.1</originHost>
+            <includeRawMessage>false</includeRawMessage>
+            <includeMarker>true</includeMarker>
+            <includeMdcData>true</includeMdcData>
+            <includeCallerData>false</includeCallerData>
+            <includeRootCauseData>false</includeRootCauseData>
+            <includeLevelName>false</includeLevelName>
+            <shortPatternLayout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>%m%nopex</pattern>
+            </shortPatternLayout>
+            <fullPatternLayout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>%m%n</pattern>
+            </fullPatternLayout>
+            <staticField>app_name:backend</staticField>
+            <staticField>os_arch:${os.arch}</staticField>
+            <staticField>os_name:${os.name}</staticField>
+            <staticField>os_version:${os.version}</staticField>
+        </encoder>
     </appender>
 
-
-    <root level="info">
-        <appender-ref ref="GELF" />
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>
+
+    <logger name="com.logging.springboot2graylog">
+        <appender-ref ref="MAIN_LOG_FILE" />
+        <appender-ref ref="GELF" />
+    </logger>
+
+    <logger name="com.logging.springboot2graylog.interceptor.RestControllerInterceptor" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="GELF" />
+        <appender-ref ref="INCOMING_REQUESTS_LOG_FILE" />
+    </logger>
 
 
 </configuration>
