@@ -10,3 +10,8 @@ Graylog is a powerful platform that allows for easy log management of both struc
 * [Maven](http://maven.apache.org/download.cgi)
 * Git
 * [Docker](https://www.docker.com/)
+
+## How to Use
+1. Clone project
+2. Run docker-compose file `docker-compose up -d`
+3. Launch project
