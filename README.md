@@ -19,3 +19,5 @@ Graylog is a powerful platform that allows for easy log management of both struc
   ## Sending application logs
   
   We used Logback-gelf which is used here to generate logs in Graylog.
+
+There is a detailed introduction to using logback-gelf on [here](https://github.com/osiegmar/logback-gelf).
