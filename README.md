@@ -11,7 +11,11 @@ Graylog is a powerful platform that allows for easy log management of both struc
 * Git
 * [Docker](https://www.docker.com/)
 
-## How to Use
+# How to Use
 1. Clone project
 2. Run docker-compose file `docker-compose up -d` (We are using docker compose to easily setup a graylog instance with data persistent support)
 3. Run `mvn spring-boot:run` from project root
+
+  ## Sending application logs
+  
+  We used Logback-gelf which is used here to generate logs in Graylog.
