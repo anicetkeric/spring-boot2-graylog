@@ -21,3 +21,14 @@ Graylog is a powerful platform that allows for easy log management of both struc
   We used Logback-gelf which is used here to generate logs in Graylog.
 
 There is a detailed introduction to using logback-gelf on [here](https://github.com/osiegmar/logback-gelf).
+
+* Add a logback-gelf dependency in the pom file
+
+```xml
+<dependency>
+    <groupId>de.siegmar</groupId>
+	  <artifactId>logback-gelf</artifactId>
+	  <version>2.0.0</version>
+</dependency>
+```
+* logback.xml file
