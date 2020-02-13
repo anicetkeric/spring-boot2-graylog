@@ -16,7 +16,7 @@ Graylog is a powerful platform that allows for easy log management of both struc
 2. Run docker-compose file `docker-compose up -d` (We are using docker compose to easily setup a graylog instance with data persistent support)
 3. Run `mvn spring-boot:run` from project root
 
-  ## Sending application logs
+  ## Sending application logs (Spring boot application)
   
   We used Logback-gelf which is used here to generate logs in Graylog.
 
@@ -87,6 +87,7 @@ There is a detailed introduction to using logback-gelf on [here](https://github.
 </configuration>
 ```
 
+## Receiving logs (Graylog server)
 
 
 # Resources
