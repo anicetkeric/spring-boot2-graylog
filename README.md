@@ -6,7 +6,7 @@ Graylog is a powerful platform that allows for easy log management of both struc
 [View Documentation](http://docs.graylog.org/en/3.1/index.html).
 
 # Prerequisites
-*	JAVA >= 8
+* JAVA >= 8
 * [Maven](http://maven.apache.org/download.cgi)
 * Git
 * [Docker](https://www.docker.com/)
@@ -86,3 +86,9 @@ There is a detailed introduction to using logback-gelf on [here](https://github.
 
 </configuration>
 ```
+
+
+
+# Resources
+* [Graylog documentation](https://docs.graylog.org/en/3.2/)
+* [logback-gelf github](https://github.com/osiegmar/logback-gelf).
