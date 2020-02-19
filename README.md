@@ -100,6 +100,9 @@ Go to the Web interface -> System -> Entries and select "GELF UDP" and click on 
 
 ![capture 2](https://github.com/anicetkeric/spring-boot2-graylog/blob/master/screens/udp%20input.PNG)
 
+Run the Spring app and click "Show received messages".
+
+you can see the logs catching.
 
 ![capture 3](https://github.com/anicetkeric/spring-boot2-graylog/blob/master/screens/result.PNG)
 
