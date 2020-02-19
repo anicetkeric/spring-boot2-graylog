@@ -99,6 +99,7 @@ Go to the Web interface -> System -> Entries and select "GELF UDP" and click on 
 
 
 
+
 # Resources
 * [Graylog documentation](https://docs.graylog.org/en/3.2/)
 * [logback-gelf github](https://github.com/osiegmar/logback-gelf).
