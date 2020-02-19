@@ -98,7 +98,10 @@ Go to the Web interface -> System -> Entries and select "GELF UDP" and click on 
 ![capture 1](https://github.com/anicetkeric/spring-boot2-graylog/blob/master/screens/input.PNG)
 
 
+![capture 2](https://github.com/anicetkeric/spring-boot2-graylog/blob/master/screens/udp%20input.PNG)
 
+
+![capture 3](https://github.com/anicetkeric/spring-boot2-graylog/blob/master/screens/result.PNG)
 
 # Resources
 * [Graylog documentation](https://docs.graylog.org/en/3.2/)
