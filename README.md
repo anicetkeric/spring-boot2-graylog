@@ -89,6 +89,13 @@ There is a detailed introduction to using logback-gelf on [here](https://github.
 
 ## Receiving logs (Graylog server)
 
+Access to the graylog server in the browser http://ip:9000.
+
+To send the data to Graylog, you must therefore configure an entry. This will tell Graylog to accept the log messages.
+
+Go to the Web interface -> System -> Entries and select "GELF UDP" and click on "Launch a new entry", then you will see the following window.
+
+
 
 # Resources
 * [Graylog documentation](https://docs.graylog.org/en/3.2/)
